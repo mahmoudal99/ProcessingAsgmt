@@ -11,6 +11,6 @@ public class Planet extends PApplet {
     public void drawPlanet(){
         //Planet
         pApplet.fill(200, 90, 90);
-        pApplet.ellipse(800, 200, 400, 400);
+        pApplet.ellipse(650, 160, 160, 160);
     }
 }

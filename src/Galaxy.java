@@ -18,10 +18,7 @@ public class Galaxy extends PApplet{
         Planet planet = new Planet(this);
         planet.drawPlanet();
         image = loadImage("images/planet.png");
-        image(image, 600, 0, 400, 400);
-
-        fill(124,252,0);
-        rect(0, 300, 800, 500);
+        image(image, 570, 80, 160, 160);
 
 
         for (int i = 0; i < 2; i++){
