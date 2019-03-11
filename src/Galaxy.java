@@ -32,14 +32,10 @@ public class Galaxy extends PApplet{
         background(background);
         setup();
 
-
         for (int i = 0; i < 2; i++){
             float x = random(800);
             float y = random(500);
-
             float z = random(width/2);
-            float pz = z;
-
             stars[i] = new Star(x, y, z, this);
         }
 
