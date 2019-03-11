@@ -13,7 +13,7 @@ public class Circle extends PApplet {
     }
 
     public void drawCircle(){
-        pApplet.fill(255,160,122);
+        pApplet.fill(0);
         pApplet.noStroke();
         pApplet.smooth();
         pApplet.circle(x, y, extent);
