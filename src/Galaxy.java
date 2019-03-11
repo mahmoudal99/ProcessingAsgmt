@@ -25,10 +25,6 @@ public class Galaxy extends PApplet{
         image2 = loadImage("images/planet2.png");
         image(image2, 90, 20, 100, 100);
 
-
-
-
-
     }
 
     public void draw() {
