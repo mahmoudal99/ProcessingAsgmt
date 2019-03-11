@@ -17,9 +17,9 @@ public class Star extends PApplet {
         pApplet.noStroke();
 
         // I use the z value to increase the star size between a range from 0 to 16.
-        float r = map(z, 0, pApplet.width/2, 16, 0);
+        float r = map(z, 0, pApplet.width/2, 9, 0);
         pApplet.ellipse(x, y, r, r);
-
+        return;
     }
 
 }

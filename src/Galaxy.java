@@ -26,9 +26,20 @@ public class Galaxy extends PApplet{
         image(image2, 90, 20, 100, 100);
 
 
+
+
+
+    }
+
+    public void draw() {
+        background = loadImage("images/background_p.jpg");
+        background(background);
+        setup();
+
+
         for (int i = 0; i < 2; i++){
-            float x = random(600);
-            float y = random(300);
+            float x = random(800);
+            float y = random(500);
 
             float z = random(width/2);
             float pz = z;
@@ -38,12 +49,5 @@ public class Galaxy extends PApplet{
 
         stars[0].drawStar();
         stars[1].drawStar();
-
-    }
-
-    public void draw() {
-        background = loadImage("images/background_p.jpg");
-        background(background);
-        setup();
     }
 }
