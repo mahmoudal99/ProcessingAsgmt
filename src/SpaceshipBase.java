@@ -9,20 +9,18 @@ public class SpaceshipBase extends PApplet {
     }
 
     public void drawRect(){
+
         pApplet.fill(255,160,122);
         pApplet.rect(0, 350, 800, 250);
 
-        pApplet.fill(255,160,122);
-        pApplet.noStroke();
-        pApplet.smooth();
-        pApplet.circle(400, 350, 350);
 
-        pApplet.fill(255,160,122);
-        pApplet.smooth();
-        pApplet.circle(250, 425, 300);
+        Circle centreCircle = new Circle(this.pApplet,400, 350, 350);
+        centreCircle.drawCircle();
 
-        pApplet.fill(255,160,122);
-        pApplet.smooth();
-        pApplet.circle(550, 425, 300);
+        Circle leftCircle = new Circle(this.pApplet,250, 425, 300);
+        leftCircle.drawCircle();
+
+        Circle rightCircle = new Circle(this.pApplet,550, 425, 300);
+        rightCircle.drawCircle();
     }
 }
