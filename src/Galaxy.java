@@ -6,7 +6,7 @@ public class Galaxy extends PApplet{
 
     Star[] stars = new Star[2];
     PGraphics mask;
-    PImage image;
+    PImage image, image2;
     PImage background;
 
     public void settings(){
@@ -15,10 +15,15 @@ public class Galaxy extends PApplet{
 
     public void setup() {
 
-        Planet planet = new Planet(this);
+        Planet planet = new Planet(this, 650, 160, 160, 160);
         planet.drawPlanet();
         image = loadImage("images/planet.png");
         image(image, 570, 80, 160, 160);
+
+        Planet planet2 = new Planet(this, 140, 70, 100, 100);
+        planet2.drawPlanet();
+        image2 = loadImage("images/planet2.png");
+        image(image2, 90, 20, 100, 100);
 
 
         for (int i = 0; i < 2; i++){
