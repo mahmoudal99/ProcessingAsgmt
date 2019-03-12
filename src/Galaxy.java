@@ -1,9 +1,12 @@
 import processing.core.PApplet;
+import processing.core.PImage;
 
 public class Galaxy extends PApplet {
     public void settings() {
         size(800, 600);
     }
+
+    PImage spaceShipImage;
 
     public void setup() {
         SpaceshipBase spaceshipBase = new SpaceshipBase(this);
@@ -37,6 +40,9 @@ public class Galaxy extends PApplet {
         Circle rightButton = new Circle(this, 440, 287, 20);
         rightButton.setColor(81, 9, 1);
         rightButton.drawCircle();
+
+        spaceShipImage = loadImage("images/spaceship.png");
+        image(spaceShipImage,210, 350, 64, 64);
 
     }
 
