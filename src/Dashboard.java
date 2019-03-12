@@ -14,6 +14,7 @@ public class Dashboard extends PApplet {
         Arc arc1 = new Arc(pApplet, 400, 350, 200, 200, radians(180), radians(360));
         arc1.setColor(37,40,55);
         arc1.drawArc();
+
         Arc rightArc = new Arc(pApplet, 550, 380, 160, 160, radians(210), radians(390));
         rightArc.setColor(37,40,55);
         rightArc.drawArc();
@@ -78,6 +79,9 @@ public class Dashboard extends PApplet {
 
         Radar radar = new Radar(pApplet);
         radar.drawRadar();
+
+        Weapons weapons = new Weapons(pApplet);
+        weapons.drawWeapons();
     }
 }
 
