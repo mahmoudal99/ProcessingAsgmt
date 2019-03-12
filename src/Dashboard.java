@@ -7,11 +7,7 @@ public class Dashboard extends PApplet {
     PImage spaceShipImage;
 
     public Dashboard(PApplet pApplet){
-
         this.pApplet = pApplet;
-
-
-
     }
 
     public void drawDashboard(){
@@ -34,6 +30,14 @@ public class Dashboard extends PApplet {
 
         pApplet.fill(16, 17, 21);
         pApplet.rect(300, 300, 200, 150);
+
+        pApplet.fill(16, 17, 21);
+        pApplet.stroke(81, 9, 1);
+        pApplet.rect(300, 260, 20, 200);
+
+        pApplet.fill(16, 17, 21);
+        pApplet.stroke(81, 9, 1);
+        pApplet.rect(480, 260, 20, 200);
 
         Circle centreButton = new Circle(pApplet, 400, 280, 20);
         centreButton.setColor(81, 9, 1);
@@ -70,6 +74,10 @@ public class Dashboard extends PApplet {
         Circle shipControlRightButton = new Circle(pApplet, 225, 425, 20);
         shipControlRightButton.setColor(124,252,0);
         shipControlRightButton.drawCircle();
+
+
+        Radar radar = new Radar(pApplet);
+        radar.drawRadar();
     }
 }
 

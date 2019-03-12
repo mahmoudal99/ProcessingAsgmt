@@ -4,7 +4,7 @@ public class Arc extends PApplet {
 
     PApplet pApplet;
     private float x, y, width, height, start, stop;
-    float r, g, b, strokeR, strokeG, strokeB;
+    float r, g, b, strokeR, strokeG, strokeB, strokeWeight;
     public boolean noFill;
 
     Arc(PApplet pApplet, float x, float y, float width, float height, float start, float stop){
@@ -19,6 +19,7 @@ public class Arc extends PApplet {
         this.r = 0;
         this.g = 0;
         this.b = 0;
+        this.strokeWeight = 1;
 
         this.strokeR = 0;
         this.strokeG = 0;
@@ -40,6 +41,10 @@ public class Arc extends PApplet {
         this.strokeB = blue;
     }
 
+    public void setStrokeWeight(float weight){
+        strokeWeight = weight;
+    }
+
 
     public void drawArc(){
 
@@ -49,6 +54,7 @@ public class Arc extends PApplet {
             pApplet.fill(r, g, b);
         }
         pApplet.stroke(strokeR,strokeG,strokeB);
+        pApplet.strokeWeight(strokeWeight);
         pApplet.arc(x, y, width, height, start, stop);
     }
 }
