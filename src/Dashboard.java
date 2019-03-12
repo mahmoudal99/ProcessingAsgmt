@@ -87,6 +87,9 @@ public class Dashboard extends PApplet {
 
         Weapons weapons = new Weapons(pApplet);
         weapons.drawWeapons();
+
+        Lever lever = new Lever(pApplet);
+        lever.drawLever();
     }
 }
 
