@@ -25,5 +25,7 @@ public class SpaceshipBase extends PApplet {
         Circle rightCircle = new Circle(this.pApplet,550, 420, 300);
         centreCircle.isAlpha = false;
         rightCircle.drawCircle();
+
+
     }
 }

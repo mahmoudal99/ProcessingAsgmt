@@ -4,7 +4,7 @@ import processing.core.PImage;
 public class Dashboard extends PApplet {
 
     PApplet pApplet;
-    PImage spaceShipImage;
+    PImage spaceShipImage, mapImage;
 
     public Dashboard(PApplet pApplet){
         this.pApplet = pApplet;
@@ -90,6 +90,7 @@ public class Dashboard extends PApplet {
 
         Lever lever = new Lever(pApplet);
         lever.drawLever();
+        
     }
 }
 
