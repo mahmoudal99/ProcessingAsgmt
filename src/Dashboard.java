@@ -11,14 +11,19 @@ public class Dashboard extends PApplet {
     }
 
     public void drawDashboard(){
+
         Arc arc1 = new Arc(pApplet, 400, 350, 200, 200, radians(180), radians(360));
+        arc1.setStrokeColor(0, 0, 200);
         arc1.setColor(37,40,55);
         arc1.drawArc();
 
         Arc rightArc = new Arc(pApplet, 550, 380, 160, 160, radians(210), radians(390));
+        rightArc.setStrokeColor(0, 0, 200);
         rightArc.setColor(37,40,55);
         rightArc.drawArc();
+
         Arc leftArc = new Arc(pApplet,250, 380, 160, 160, radians(150), radians(330));
+        leftArc.setStrokeColor(0, 0, 200);
         leftArc.setColor(37,40,55);
         leftArc.drawArc();
 
