@@ -13,7 +13,6 @@ public class SpaceshipBase extends PApplet {
         pApplet.fill(0);
         pApplet.rect(0, 350, 800, 250);
 
-
         Circle centreCircle = new Circle(this.pApplet,400, 350, 350);
         centreCircle.drawCircle();
 

@@ -33,7 +33,7 @@ public class Dashboard extends PApplet {
         centreDashBoardCircle.drawCircle();
 
         pApplet.fill(16, 17, 21);
-        pApplet.rect(300, 300, 200, 200);
+        pApplet.rect(300, 300, 200, 150);
 
         Circle centreButton = new Circle(pApplet, 400, 280, 20);
         centreButton.setColor(81, 9, 1);
@@ -54,6 +54,22 @@ public class Dashboard extends PApplet {
         borderlineArc.noFill = true;
         borderlineArc.setStrokeColor(81, 9, 1);
         borderlineArc.drawArc();
+
+        spaceShipImage = pApplet.loadImage("images/alien_planet.png");
+        pApplet.image(spaceShipImage,530, 350, 70, 70);
+
+        Arc leftBorderlineArc = new Arc(pApplet,560, 380, 100, 100, radians(180), radians(540));
+        leftBorderlineArc.noFill = true;
+        leftBorderlineArc.setStrokeColor(81, 9, 1);
+        leftBorderlineArc.drawArc();
+
+        Circle shipControlLeftButton = new Circle(pApplet, 200, 400, 20);
+        shipControlLeftButton.setColor(124,252,0);
+        shipControlLeftButton.drawCircle();
+
+        Circle shipControlRightButton = new Circle(pApplet, 225, 425, 20);
+        shipControlRightButton.setColor(124,252,0);
+        shipControlRightButton.drawCircle();
     }
 }
 
