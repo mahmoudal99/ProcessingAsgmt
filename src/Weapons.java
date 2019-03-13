@@ -5,9 +5,16 @@ public class Weapons extends PApplet {
 
     PApplet pApplet;
     PImage weaponImg;
+    int choice;
+
+    String[] images = new String[3];
 
     public Weapons(PApplet pApplet){
         this.pApplet = pApplet;
+        images[0] = "images/war.png";
+        images[1] = "images/bomb.png";
+        images[2] = "images/shield.png";
+        this.choice = 0;
     }
 
     public void drawWeapons(){
@@ -46,7 +53,7 @@ public class Weapons extends PApplet {
         chosenWeaponOuterArc2.setColor(37,40,55);
         chosenWeaponOuterArc2.drawArc();
 
-        weaponImg = pApplet.loadImage("images/bomb.png");
+        weaponImg = pApplet.loadImage(images[choice]);
         pApplet.image(weaponImg,405, 355, 50, 50);
 
         Circle shootButton = new Circle(pApplet, 350, 330, 35);
@@ -80,5 +87,15 @@ public class Weapons extends PApplet {
         Circle centreShootButton = new Circle(pApplet, 350, 330, 10);
         centreShootButton.setColor(220,220,220);
         centreShootButton.drawCircle();
+    }
+
+    public void chosenWeapon(int i){
+        if(i == 0){
+            choice = 0;
+        }else if(i == 1){
+            choice = 1;
+        }else {
+            choice = 2;
+        }
     }
 }

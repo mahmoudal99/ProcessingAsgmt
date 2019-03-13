@@ -5,6 +5,7 @@ public class Dashboard extends PApplet {
 
     PApplet pApplet;
     PImage spaceShipImage, mapImage;
+    Weapons weapons = new Weapons(pApplet);
 
     public Dashboard(PApplet pApplet){
         this.pApplet = pApplet;
@@ -112,8 +113,8 @@ public class Dashboard extends PApplet {
         Radar radar = new Radar(pApplet);
         radar.drawRadar();
 
-        Weapons weapons = new Weapons(pApplet);
-        weapons.drawWeapons();
+//        weapons = new Weapons(pApplet);
+//        weapons.drawWeapons();
 
         Lever lever = new Lever(pApplet);
         lever.drawLever();
