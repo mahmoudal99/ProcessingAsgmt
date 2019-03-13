@@ -13,11 +13,14 @@ public class Spaceship extends PApplet {
         pApplet.fill(0);
         pApplet.rect(0, 350, 800, 250);
 
+
         Windshield windshield = new Windshield(pApplet);
         windshield.drawWindshield();
 
         Dashboard dashboard = new Dashboard(pApplet);
         dashboard.drawDashboard();
+
+
 
     }
 }

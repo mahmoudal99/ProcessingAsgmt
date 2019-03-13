@@ -109,7 +109,6 @@ public class Dashboard extends PApplet {
         shipControlRightButton.setColor(124,252,0);
         shipControlRightButton.drawCircle();
 
-
         Radar radar = new Radar(pApplet);
         radar.drawRadar();
 

@@ -4,17 +4,18 @@ import processing.core.PImage;
 
 public class Galaxy extends PApplet {
 
-    Star[] stars = new Star[2];
-    PGraphics mask;
-    PImage image, image2;
-    PImage background;
-    Weapons weapons = new Weapons(this);
+    private Star[] stars = new Star[2];
+    private PGraphics mask;
+    private PImage image, image2;
+    private PImage background;
+    private Weapons weapons = new Weapons(this);
 
     public void settings(){
         size(800, 600);
     }
 
     public void setup() {
+
         Spaceship spaceshipBase = new Spaceship(this);
         spaceshipBase.drawRect();
 
@@ -27,8 +28,8 @@ public class Galaxy extends PApplet {
         planet2.drawPlanet();
         image2 = loadImage("images/planet2.png");
         image(image2, 90, 20, 100, 100);
-        weapons.drawWeapons();
 
+        weapons.drawWeapons();
 
     }
 
@@ -41,6 +42,13 @@ public class Galaxy extends PApplet {
             weapons.chosenWeapon(2);
         }
     }
+
+    float[] xx = new float[6];
+    float[] yy = new float[6];
+
+
+    int x = 0;
+    int y = 0;
 
     public void draw() {
         background(255);
@@ -56,6 +64,24 @@ public class Galaxy extends PApplet {
             float z = random(width/2);
             stars[i] = new Star(x, y, z, this);
         }
+
+//        xx = new float[]{620, 640, 700, 750, 700, 640, 780, 760};
+//        yy = new float[]{500, 450, 420, 440, 580, 550,500, 555};
+
+        // Radar Tracker
+        xx = new float[]{620, 640, 700, 750, 780, 760, 700, 640};
+        yy = new float[]{500, 450, 420, 440, 500, 555, 580,  550};
+
+        System.out.println(x);
+        x++;
+        y++;
+
+        if(x == 8){
+            x = 0;
+            y = 0;
+        }
+        stroke(0, 255, 0);
+        line(700, 500, xx[x], yy[y]);
 
 //        stars[0].drawStar();
 //        stars[1].drawStar();
