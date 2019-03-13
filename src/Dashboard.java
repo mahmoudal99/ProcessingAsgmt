@@ -12,6 +12,7 @@ public class Dashboard extends PApplet {
 
     public void drawDashboard(){
 
+        // Inner Dashboard
         Arc arc1 = new Arc(pApplet, 400, 350, 200, 200, radians(180), radians(360));
         arc1.setColor(37,40,55);
         arc1.drawArc();
@@ -41,6 +42,9 @@ public class Dashboard extends PApplet {
         pApplet.fill(16, 17, 21);
         pApplet.stroke(81, 9, 1);
         pApplet.rect(480, 260, 20, 200);
+
+
+        // 3 Top Buttons
 
         Circle centreButton = new Circle(pApplet, 400, 280, 20);
         centreButton.setColor(81, 9, 1);
@@ -94,7 +98,6 @@ public class Dashboard extends PApplet {
         planetInnerArc2.noFill = true;
         planetInnerArc2.setStrokeColor(81, 9, 1);
         planetInnerArc2.drawArc();
-
 
 
         Circle shipControlLeftButton = new Circle(pApplet, 200, 400, 20);
