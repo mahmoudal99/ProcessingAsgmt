@@ -45,6 +45,9 @@ public class Arc extends PApplet {
         strokeWeight = weight;
     }
 
+    public void setNoFill(boolean fill){
+        noFill = fill;
+    }
 
     public void drawArc(){
 

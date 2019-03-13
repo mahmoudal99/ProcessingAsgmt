@@ -10,6 +10,12 @@ public class Radar extends PApplet {
 
     public void drawRadar(){
 
+        Circle circle = new Circle(pApplet, 700, 500, 160);
+        circle.isAlpha = true;
+        circle.setAlpha(50);
+        circle.setColor(0, 0, 180);
+        circle.drawCircle();
+
         // Target Tracker
         Arc aimArcOuter = new Arc(pApplet,700, 500, 160, 160, radians(180), radians(540));
         aimArcOuter.noFill = true;
