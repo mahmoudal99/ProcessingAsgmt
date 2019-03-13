@@ -1,10 +1,10 @@
 import processing.core.PApplet;
 
-public class SpaceshipBase extends PApplet {
+public class Spaceship extends PApplet {
 
     PApplet pApplet;
 
-    SpaceshipBase(PApplet pApplet){
+    Spaceship(PApplet pApplet){
         this.pApplet = pApplet;
     }
 
@@ -26,6 +26,8 @@ public class SpaceshipBase extends PApplet {
         centreCircle.isAlpha = false;
         rightCircle.drawCircle();
 
+        Dashboard dashboard = new Dashboard(pApplet);
+        dashboard.drawDashboard();
 
     }
 }
