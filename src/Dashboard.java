@@ -112,9 +112,6 @@ public class Dashboard extends PApplet {
         Radar radar = new Radar(pApplet);
         radar.drawRadar();
 
-//        weapons = new Weapons(pApplet);
-//        weapons.drawWeapons();
-
         Lever lever = new Lever(pApplet);
         lever.drawLever();
 
