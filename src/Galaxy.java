@@ -1,6 +1,7 @@
 import processing.core.PApplet;
 import processing.core.PGraphics;
 import processing.core.PImage;
+import java.io.FileInputStream;
 
 public class Galaxy extends PApplet {
 
@@ -9,6 +10,7 @@ public class Galaxy extends PApplet {
     private PImage image, image2;
     private PImage background;
     private Weapons weapons = new Weapons(this);
+
 
     public void settings(){
         size(800, 600);
@@ -43,12 +45,17 @@ public class Galaxy extends PApplet {
         }
     }
 
-    float[] xx = new float[6];
-    float[] yy = new float[6];
+    private float[] xCoordinate = new float[6];
+    private float[] yCoordinate = new float[6];
+
+    private float[] xEnemyCoordinate = new float[6];
+    private float[] yEnemyCoordinate = new float[6];
 
 
     int x = 0;
     int y = 0;
+    int xCounter = 0;
+    int yCounter = 0;
 
     public void draw() {
         background(255);
@@ -65,14 +72,10 @@ public class Galaxy extends PApplet {
             stars[i] = new Star(x, y, z, this);
         }
 
-//        xx = new float[]{620, 640, 700, 750, 700, 640, 780, 760};
-//        yy = new float[]{500, 450, 420, 440, 580, 550,500, 555};
+        // Radar Coordinates
+        xCoordinate = new float[]{620, 640, 700, 750, 780, 760, 700, 640};
+        yCoordinate = new float[]{500, 450, 420, 440, 500, 555, 580,  550};
 
-        // Radar Tracker
-        xx = new float[]{620, 640, 700, 750, 780, 760, 700, 640};
-        yy = new float[]{500, 450, 420, 440, 500, 555, 580,  550};
-
-        System.out.println(x);
         x++;
         y++;
 
@@ -81,10 +84,24 @@ public class Galaxy extends PApplet {
             y = 0;
         }
         stroke(0, 255, 0);
-        line(700, 500, xx[x], yy[y]);
+        line(700, 500, xCoordinate[x], yCoordinate[y]);
 
-//        stars[0].drawStar();
-//        stars[1].drawStar();
+        xEnemyCoordinate = new float[]{670, 675, 680, 685, 685, 685};
+        yEnemyCoordinate = new float[]{475, 470, 475, 465, 455, 450};
+
+        xCounter++;
+        yCounter++;
+
+        if(xCounter == 6){
+            xCounter = 0;
+            yCounter = 0;
+        }
+
+        Circle enemyLocation = new Circle(this, xEnemyCoordinate[xCounter], yEnemyCoordinate[yCounter], 10);
+        enemyLocation.setColor(200,0,0);
+        enemyLocation.drawCircle();
+
+
     }
 
 }
