@@ -30,7 +30,7 @@ public class Galaxy extends PApplet {
 
     public void setup() {
 
-//        frameRate(60);
+        frameRate(24);
         Spaceship spaceshipBase = new Spaceship(this);
         spaceshipBase.drawRect();
 
@@ -48,8 +48,6 @@ public class Galaxy extends PApplet {
 
     }
 
-    int seconds = 0;
-
     public void mousePressed() {
 
         System.out.println(mouseX + " " + mouseY);
@@ -64,8 +62,6 @@ public class Galaxy extends PApplet {
             startShooting = true;
         }
 
-//        startShooting = false;
-//        delay(10000);
     }
 
     public void draw() {
@@ -74,13 +70,6 @@ public class Galaxy extends PApplet {
         background = loadImage("images/background_p.jpg");
         background(background);
         setup();
-
-        for (int i = 0; i < 2; i++){
-            float x = random(800);
-            float y = random(500);
-            float z = random(width/2);
-            stars[i] = new Star(x, y, z, this);
-        }
 
         animateRadar();
         animateEnemy();

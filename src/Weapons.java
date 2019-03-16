@@ -101,14 +101,18 @@ public class Weapons extends PApplet {
 
     int i = 0;
     int z = 0;
-    PImage image;
 
-    private float[] xLaserCoordinates = new float[6];
-    private float[] yLaserCoordinates = new float[6];
+    private float[] xLaserCoordinates;
+    private float[] yLaserCoordinates;
+    private float[] xSecondLaserCoordinates;
+    private float[] ySecondLaserCoordinates;
 
     public void animateLaser(boolean start){
         xLaserCoordinates = new float[]{100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350};
         yLaserCoordinates = new float[]{300, 275, 250, 225, 200, 175, 150, 125, 100, 75, 50};
+
+        xSecondLaserCoordinates = new float[]{700, 685, 650, 625, 600, 575, 550, 525, 500, 475, 450};
+        ySecondLaserCoordinates = new float[]{300, 275, 250, 225, 200, 175, 150, 125, 100, 75, 50};
 
         i = 0;
         z = 0;
@@ -121,14 +125,10 @@ public class Weapons extends PApplet {
 
                 weaponImg = pApplet.loadImage("images/laser.png");
                 pApplet.image(weaponImg,xLaserCoordinates[i] - 20, yLaserCoordinates[z] - 20, 40, 40);
-//                pApplet.fill(0, 200, 0);
-//                pApplet.circle(xLaserCoordinates[i], yLaserCoordinates[z], 10);
+
+                pApplet.image(weaponImg, xSecondLaserCoordinates[i] - 20, ySecondLaserCoordinates[z] - 20, 40, 40);
             }
-
-        }else {
-            System.out.println("Pauses");
         }
-
 
     }
 }
