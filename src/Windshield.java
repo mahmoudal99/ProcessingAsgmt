@@ -9,11 +9,13 @@ public class Windshield extends PApplet {
     }
 
     public void drawWindshield(){
-        Circle centreCircle = new Circle(this.pApplet,400, 350, 350);
+
+        Circle centreCircle = new Circle(this.pApplet,400, 350, 400);
         centreCircle.isAlpha = true;
         centreCircle.setAlpha(70);
         centreCircle.drawCircle();
 
+        pApplet.noStroke();
         Circle leftCircle = new Circle(this.pApplet,250, 420, 300);
         centreCircle.isAlpha = false;
         leftCircle.drawCircle();

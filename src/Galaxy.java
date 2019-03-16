@@ -20,6 +20,9 @@ public class Galaxy extends PApplet {
     int y = 0;
     int xCounter = 0;
     int yCounter = 0;
+    int xLine;
+    int yLine;
+    int yIndex = 0;
 
     boolean startShooting = false;
 
@@ -45,6 +48,9 @@ public class Galaxy extends PApplet {
         image(image2, 90, 20, 100, 100);
 
         weapons.drawWeapons();
+
+        HandScanner handScanner = new HandScanner(this);
+        handScanner.drawHandScanner();
     }
 
     public void mousePressed() {
@@ -72,6 +78,7 @@ public class Galaxy extends PApplet {
 
         animateRadar();
         animateEnemy();
+        animateHandScanner();
 
         if(startShooting){
             weapons.animateLaser(true);
@@ -80,7 +87,19 @@ public class Galaxy extends PApplet {
         startShooting = false;
     }
 
+    private void animateHandScanner(){
 
+        float[] yIndexs = new float[]{460, 470, 480, 490, 500, 510, 520, 530, 540};
+
+        yIndex++;
+
+        if(yIndex == 9){
+            yIndex = 0;
+        }
+
+        stroke(0, 255, 0);
+        line(130, yIndexs[yIndex], 210, yIndexs[yIndex]);
+    }
 
     private void animateRadar(){
         // Radar Coordinates
