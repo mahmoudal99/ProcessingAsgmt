@@ -17,5 +17,6 @@ public class Planet extends PApplet {
         //Planet
         pApplet.fill(200, 90, 90);
         pApplet.ellipse(x, y, width, height);
+
     }
 }

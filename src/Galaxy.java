@@ -10,11 +10,11 @@ public class Galaxy extends PApplet {
     private PImage image, image2;
     private PImage background;
     private Weapons weapons = new Weapons(this);
-    private float[] xCoordinate = new float[6];
-    private float[] yCoordinate = new float[6];
+    private float[] xCoordinate;
+    private float[] yCoordinate;
 
-    private float[] xEnemyCoordinate = new float[6];
-    private float[] yEnemyCoordinate = new float[6];
+    private float[] xEnemyCoordinate;
+    private float[] yEnemyCoordinate;
 
     int x = 0;
     int y = 0;
@@ -45,7 +45,6 @@ public class Galaxy extends PApplet {
         image(image2, 90, 20, 100, 100);
 
         weapons.drawWeapons();
-
     }
 
     public void mousePressed() {

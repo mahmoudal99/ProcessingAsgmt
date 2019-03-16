@@ -87,6 +87,7 @@ public class Weapons extends PApplet {
         Circle centreShootButton = new Circle(pApplet, 350, 330, 10);
         centreShootButton.setColor(220,220,220);
         centreShootButton.drawCircle();
+
     }
 
     public void chosenWeapon(int i){
@@ -111,7 +112,7 @@ public class Weapons extends PApplet {
         xLaserCoordinates = new float[]{100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350};
         yLaserCoordinates = new float[]{300, 275, 250, 225, 200, 175, 150, 125, 100, 75, 50};
 
-        xSecondLaserCoordinates = new float[]{700, 685, 650, 625, 600, 575, 550, 525, 500, 475, 450};
+        xSecondLaserCoordinates = new float[]{650, 685, 650, 625, 600, 575, 550, 525, 500, 475, 450};
         ySecondLaserCoordinates = new float[]{300, 275, 250, 225, 200, 175, 150, 125, 100, 75, 50};
 
         i = 0;
@@ -124,9 +125,10 @@ public class Weapons extends PApplet {
                 z++;
 
                 weaponImg = pApplet.loadImage("images/laser.png");
-                pApplet.image(weaponImg,xLaserCoordinates[i] - 20, yLaserCoordinates[z] - 20, 40, 40);
+                pApplet.image(weaponImg,xLaserCoordinates[i] - 30, yLaserCoordinates[z] - 20, 40, 40);
 
-                pApplet.image(weaponImg, xSecondLaserCoordinates[i] - 20, ySecondLaserCoordinates[z] - 20, 40, 40);
+                weaponImg = pApplet.loadImage("images/second_laser.png");
+                pApplet.image(weaponImg, xSecondLaserCoordinates[i] - 40, ySecondLaserCoordinates[z] - 30, 40, 40);
             }
         }
 

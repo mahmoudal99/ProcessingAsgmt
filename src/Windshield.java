@@ -22,12 +22,15 @@ public class Windshield extends PApplet {
         centreCircle.isAlpha = false;
         rightCircle.drawCircle();
 
-        Circle rightEndCircle = new Circle(this.pApplet,700, 450, 300);
-        rightEndCircle.isAlpha = false;
+        Circle rightEndCircle = new Circle(this.pApplet,700, 450, 400);
+        rightEndCircle.isAlpha = true;
+        rightEndCircle.setAlpha(70);
         rightEndCircle.drawCircle();
 
-        Circle leftEndCircle = new Circle(this.pApplet,100, 450, 300);
-        leftEndCircle.isAlpha = false;
+        Circle leftEndCircle = new Circle(this.pApplet,100, 450, 400);
+        leftEndCircle.isAlpha = true;
+        leftCircle.setAlpha(80);
         leftEndCircle.drawCircle();
+
     }
 }
