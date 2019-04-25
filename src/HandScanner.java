@@ -9,6 +9,7 @@ public class HandScanner extends PApplet {
     }
 
     void drawHandScanner(){
+
         pApplet.noFill();
         pApplet.stroke(200, 0, 0);
         pApplet.rect(130, 450, 80, 100, 7);

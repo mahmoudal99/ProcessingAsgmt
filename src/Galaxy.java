@@ -22,11 +22,7 @@ public class Galaxy extends PApplet {
 
         frameRate(24);
 
-
         String[] planetNames = loadStrings("textfiles/planetNames.txt");
-        for (int i =0; i < planetNames.length; i++){
-            System.out.println(planetNames[i]);
-        }
 
         Spaceship spaceshipBase = new Spaceship(this);
         spaceshipBase.drawRect();
