@@ -70,8 +70,9 @@ public class Galaxy extends PApplet {
             weapons.chosenWeapon(2);
         } else if (mouseX > 335 && mouseX < 365 && mouseY > 315 && mouseY < 345) {
             startShooting = true;
-        }else if (mouseX > 650 && mouseX < 670 && mouseY > 390 && mouseY < 410){
+        }else if (mouseX > 640 && mouseX < 670 && mouseY > 380 && mouseY < 410){
             openScreen();
+            System.out.println(mouseX + " " +  mouseY);
         }
     }
 
