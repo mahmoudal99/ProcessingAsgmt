@@ -8,25 +8,34 @@ public class PlanetScreen extends PApplet {
         this.pApplet = pApplet;
     }
 
-    void drawHandScanner(String[] planets){
+    void drawPlanetScren(String[] planets){
 
         pApplet.noFill();
         pApplet.stroke(200, 0, 0);
-        pApplet.rect(130, 450, 80, 100, 7);
+        pApplet.rect(650, 250, 120, 140, 7);
 
 //        int xLine = 140;
-        int yLine = 460;
+        int yLine = 260;
 //        while (xLine <= 200){
 //            pApplet.line(xLine, 450, xLine, 550);
 //            xLine += 10;
 //        }
 
-        while (yLine < 550){
-            pApplet.line(130, yLine, 210, yLine);
-            pApplet.textSize(10);
-            pApplet.fill(255, 2, 0);
-            pApplet.text(planets[0], 130, yLine);
-            yLine += 10;
+        int planetNameCounter = 0;
+
+
+
+        while (yLine < 380){
+            pApplet.line(650, yLine+10, 770, yLine+10);
+            pApplet.textSize(13);
+            pApplet.fill(255, 255, 255);
+            pApplet.text(planets[planetNameCounter], 670, yLine+5);
+            yLine += 30;
+
+            if(planetNameCounter >= 4){
+                planetNameCounter = 0;
+            }
+            planetNameCounter++;
         }
     }
 }

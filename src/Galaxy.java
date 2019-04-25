@@ -43,6 +43,9 @@ public class Galaxy extends PApplet {
 
         HandScanner handScanner = new HandScanner(this);
         handScanner.drawHandScanner();
+
+        PlanetScreen planetScreen = new PlanetScreen(this);
+        planetScreen.drawPlanetScren(planetNames);
     }
 
     public void mousePressed() {
