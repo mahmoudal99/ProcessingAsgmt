@@ -10,7 +10,7 @@ public class PlanetScreen extends PApplet {
 
     void drawPlanetScren(String[] planets){
 
-        pApplet.noFill();
+        pApplet.fill(255, 255, 255, 80);
         pApplet.stroke(200, 0, 0);
         pApplet.rect(650, 250, 120, 140, 7);
 
@@ -23,12 +23,10 @@ public class PlanetScreen extends PApplet {
 
         int planetNameCounter = 0;
 
-
-
         while (yLine < 380){
             pApplet.line(650, yLine+10, 770, yLine+10);
             pApplet.textSize(13);
-            pApplet.fill(255, 255, 255);
+            pApplet.fill(10, 255, 0);
             pApplet.text(planets[planetNameCounter], 670, yLine+5);
             yLine += 30;
 
