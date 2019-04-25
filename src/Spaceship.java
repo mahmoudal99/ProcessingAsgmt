@@ -4,15 +4,13 @@ public class Spaceship extends PApplet {
 
     PApplet pApplet;
 
-    Spaceship(PApplet pApplet){
+    Spaceship(PApplet pApplet) {
         this.pApplet = pApplet;
     }
 
-    public void drawRect(){
-
+    void drawRect() {
 
         // Turrets
-
         pApplet.strokeWeight(3);
         pApplet.stroke(0, 0, 0);
         pApplet.beginShape();

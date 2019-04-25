@@ -1,51 +1,42 @@
 import processing.core.PApplet;
-import processing.core.PGraphics;
 import processing.core.PImage;
-import java.io.FileInputStream;
+
 
 public class Galaxy extends PApplet {
 
-    private Star[] stars = new Star[2];
-    private PGraphics mask;
-    private PImage image, image2;
-    private PImage background;
     private Weapons weapons = new Weapons(this);
-    private float[] xCoordinate;
-    private float[] yCoordinate;
 
-    private float[] xEnemyCoordinate;
-    private float[] yEnemyCoordinate;
+    private int x = 0;
+    private int y = 0;
+    private int xCounter = 0;
+    private int yCounter = 0;
+    private int yIndex = 0;
 
-    int x = 0;
-    int y = 0;
-    int xCounter = 0;
-    int yCounter = 0;
-    int xLine;
-    int yLine;
-    int yIndex = 0;
-
-    boolean startShooting = false;
+    private boolean startShooting = false;
 
 
-    public void settings(){
+    public void settings() {
         size(800, 600);
     }
 
     public void setup() {
 
         frameRate(24);
+
         Spaceship spaceshipBase = new Spaceship(this);
         spaceshipBase.drawRect();
 
         Planet planet = new Planet(this, 650, 160, 160, 160);
         planet.drawPlanet();
-        image = loadImage("images/planet.png");
-        image(image, 570, 80, 160, 160);
+
+        PImage planetImage = loadImage("images/planet.png");
+        image(planetImage, 570, 80, 160, 160);
 
         Planet planet2 = new Planet(this, 140, 70, 100, 100);
         planet2.drawPlanet();
-        image2 = loadImage("images/planet2.png");
-        image(image2, 90, 20, 100, 100);
+
+        PImage planetImage2 = loadImage("images/planet2.png");
+        image(planetImage2, 90, 20, 100, 100);
 
         weapons.drawWeapons();
 
@@ -55,24 +46,21 @@ public class Galaxy extends PApplet {
 
     public void mousePressed() {
 
-        System.out.println(mouseX + " " + mouseY);
-
-        if(mouseX > 40 && mouseX < 80 && mouseY > 440 && mouseY < 480){
+        if (mouseX > 40 && mouseX < 80 && mouseY > 440 && mouseY < 480) {
             weapons.chosenWeapon(1);
-        }else if(mouseX > 40 && mouseX < 80 && mouseY > 380 && mouseY < 420){
+        } else if (mouseX > 40 && mouseX < 80 && mouseY > 380 && mouseY < 420) {
             weapons.chosenWeapon(0);
-        }else if(mouseX > 40 && mouseX < 80 && mouseY > 500 && mouseY < 540){
+        } else if (mouseX > 40 && mouseX < 80 && mouseY > 500 && mouseY < 540) {
             weapons.chosenWeapon(2);
-        }else if(mouseX > 335 && mouseX < 365 && mouseY > 315 && mouseY < 345){
+        } else if (mouseX > 335 && mouseX < 365 && mouseY > 315 && mouseY < 345) {
             startShooting = true;
         }
-
     }
 
     public void draw() {
         background(255);
 
-        background = loadImage("images/background_p.jpg");
+        PImage background = loadImage("images/background_p.jpg");
         background(background);
         setup();
 
@@ -80,20 +68,20 @@ public class Galaxy extends PApplet {
         animateEnemy();
         animateHandScanner();
 
-        if(startShooting){
+        if (startShooting) {
             weapons.animateLaser(true);
         }
         weapons.animateLaser(false);
         startShooting = false;
     }
 
-    private void animateHandScanner(){
+    private void animateHandScanner() {
 
         float[] yIndexs = new float[]{460, 470, 480, 490, 500, 510, 520, 530, 540};
 
         yIndex++;
 
-        if(yIndex == 9){
+        if (yIndex == 9) {
             yIndex = 0;
         }
 
@@ -101,15 +89,15 @@ public class Galaxy extends PApplet {
         line(130, yIndexs[yIndex], 210, yIndexs[yIndex]);
     }
 
-    private void animateRadar(){
+    private void animateRadar() {
         // Radar Coordinates
-        xCoordinate = new float[]{620, 640, 700, 750, 780, 760, 700, 640};
-        yCoordinate = new float[]{500, 450, 420, 440, 500, 555, 580,  550};
+        float[] xCoordinate = new float[]{620, 640, 700, 750, 780, 760, 700, 640};
+        float[] yCoordinate = new float[]{500, 450, 420, 440, 500, 555, 580, 550};
 
         x++;
         y++;
 
-        if(x == 8){
+        if (x == 8) {
             x = 0;
             y = 0;
         }
@@ -117,20 +105,20 @@ public class Galaxy extends PApplet {
         line(700, 500, xCoordinate[x], yCoordinate[y]);
     }
 
-    private void animateEnemy(){
-        xEnemyCoordinate = new float[]{670, 675, 680, 685, 685, 685};
-        yEnemyCoordinate = new float[]{475, 470, 475, 465, 455, 450};
+    private void animateEnemy() {
+        float[] xEnemyCoordinate = new float[]{670, 675, 680, 685, 685, 685};
+        float[] yEnemyCoordinate = new float[]{475, 470, 475, 465, 455, 450};
 
         xCounter++;
         yCounter++;
 
-        if(xCounter == 6){
+        if (xCounter == 6) {
             xCounter = 0;
             yCounter = 0;
         }
 
         Circle enemyLocation = new Circle(this, xEnemyCoordinate[xCounter], yEnemyCoordinate[yCounter], 10);
-        enemyLocation.setColor(200,0,0);
+        enemyLocation.setColor(200, 0, 0);
         enemyLocation.drawCircle();
     }
 

@@ -1,20 +1,14 @@
 import processing.core.PApplet;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Radar extends PApplet {
 
     PApplet pApplet;
 
-
-    public Radar(PApplet pApplet){
+    Radar(PApplet pApplet) {
         this.pApplet = pApplet;
     }
 
-    public void drawRadar(){
-
-
+    void drawRadar() {
 
         Circle circle = new Circle(pApplet, 700, 500, 160);
         circle.isAlpha = true;
@@ -23,24 +17,24 @@ public class Radar extends PApplet {
         circle.drawCircle();
 
         // Target Tracker
-        Arc aimArcOuter = new Arc(pApplet,700, 500, 180, 180, radians(180), radians(540));
+        Arc aimArcOuter = new Arc(pApplet, 700, 500, 180, 180, radians(180), radians(540));
         aimArcOuter.noFill = true;
         aimArcOuter.setStrokeColor(0, 200, 0);
         aimArcOuter.setStrokeWeight(5);
         aimArcOuter.drawArc();
 
-        Arc aimArcInner = new Arc(pApplet,700, 500, 130, 130, radians(180), radians(540));
+        Arc aimArcInner = new Arc(pApplet, 700, 500, 130, 130, radians(180), radians(540));
         aimArcInner.noFill = true;
         aimArcInner.setStrokeColor(81, 9, 1);
         aimArcInner.drawArc();
 
-        Arc aimArcCentreOuter = new Arc(pApplet,700, 500, 90, 90, radians(180), radians(540));
+        Arc aimArcCentreOuter = new Arc(pApplet, 700, 500, 90, 90, radians(180), radians(540));
         aimArcCentreOuter.noFill = true;
         aimArcCentreOuter.setStrokeColor(81, 9, 1);
         aimArcCentreOuter.setStrokeWeight(2);
         aimArcCentreOuter.drawArc();
 
-        Arc aimArcCentreInner = new Arc(pApplet,700, 500, 40, 40, radians(180), radians(540));
+        Arc aimArcCentreInner = new Arc(pApplet, 700, 500, 40, 40, radians(180), radians(540));
         aimArcCentreInner.noFill = true;
         aimArcCentreInner.setStrokeColor(81, 9, 1);
         aimArcCentreInner.setStrokeWeight(2);

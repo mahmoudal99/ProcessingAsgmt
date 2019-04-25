@@ -4,8 +4,8 @@ public class Circle extends PApplet {
 
     PApplet pApplet;
     private float x, y, extent;
-    float r, g, b;
-    int alpha;
+    private float r, g, b;
+    private int alpha;
     boolean isAlpha;
 
     Circle(PApplet pApplet, float x, float y, float extent){
@@ -20,17 +20,17 @@ public class Circle extends PApplet {
         this.alpha = 100;
     }
 
-    public void setColor(float red, float green, float blue){
+    void setColor(float red, float green, float blue){
         this.r = red;
         this.g = green;
         this.b = blue;
     }
 
-    public void setAlpha(int alpha){
+    void setAlpha(int alpha){
         this.alpha = alpha;
     }
 
-    public void drawCircle(){
+    void drawCircle(){
 
         if(!isAlpha){
             pApplet.fill(r, g, b);

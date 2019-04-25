@@ -4,8 +4,8 @@ public class Arc extends PApplet {
 
     PApplet pApplet;
     private float x, y, width, height, start, stop;
-    float r, g, b, strokeR, strokeG, strokeB, strokeWeight;
-    public boolean noFill;
+    private float r, g, b, strokeR, strokeG, strokeB, strokeWeight;
+    boolean noFill;
 
     Arc(PApplet pApplet, float x, float y, float width, float height, float start, float stop){
         this.pApplet = pApplet;
@@ -29,28 +29,27 @@ public class Arc extends PApplet {
 
     }
 
-    public void setColor(float red, float green, float blue){
+    void setColor(float red, float green, float blue){
         this.r = red;
         this.g = green;
         this.b = blue;
     }
 
-    public void setStrokeColor(float red, float green, float blue){
+    void setStrokeColor(float red, float green, float blue){
         this.strokeR = red;
         this.strokeG = green;
         this.strokeB = blue;
     }
 
-    public void setStrokeWeight(float weight){
+    void setStrokeWeight(float weight){
         strokeWeight = weight;
     }
 
-    public void setNoFill(boolean fill){
-        noFill = fill;
+    void setNoFill(){
+        noFill = true;
     }
 
-    public void drawArc(){
-
+    void drawArc(){
         if(noFill){
             pApplet.noFill();
         }else {

@@ -4,11 +4,11 @@ public class Lever extends PApplet {
 
     PApplet pApplet;
 
-    public Lever(PApplet pApplet){
+    Lever(PApplet pApplet){
         this.pApplet = pApplet;
     }
 
-    public void drawLever(){
+    void drawLever(){
         // Lever Speed
         pApplet.fill(220,220,220);
         pApplet.rect(335, 380, 5, 50, 4);
