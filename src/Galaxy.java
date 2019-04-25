@@ -11,8 +11,10 @@ public class Galaxy extends PApplet {
     private int xCounter = 0;
     private int yCounter = 0;
     private int yIndex = 0;
+    String[] planetNames;
 
     private boolean startShooting = false;
+    private boolean showScreen = false;
 
     public void settings() {
         size(800, 600);
@@ -22,7 +24,7 @@ public class Galaxy extends PApplet {
 
         frameRate(24);
 
-        String[] planetNames = loadStrings("textfiles/planetNames.txt");
+        planetNames = loadStrings("textfiles/planetNames.txt");
 
         Spaceship spaceshipBase = new Spaceship(this);
         spaceshipBase.drawRect();
@@ -44,8 +46,18 @@ public class Galaxy extends PApplet {
         HandScanner handScanner = new HandScanner(this);
         handScanner.drawHandScanner();
 
-        PlanetScreen planetScreen = new PlanetScreen(this);
-        planetScreen.drawPlanetScren(planetNames);
+        if(showScreen){
+            PlanetScreen planetScreen = new PlanetScreen(this);
+            planetScreen.drawPlanetScren(planetNames);
+        }
+    }
+
+    private void openScreen(){
+        if(showScreen){
+            showScreen = false;
+        }else {
+            showScreen = true;
+        }
     }
 
     public void mousePressed() {
@@ -58,6 +70,8 @@ public class Galaxy extends PApplet {
             weapons.chosenWeapon(2);
         } else if (mouseX > 335 && mouseX < 365 && mouseY > 315 && mouseY < 345) {
             startShooting = true;
+        }else if (mouseX > 650 && mouseX < 670 && mouseY > 390 && mouseY < 410){
+            openScreen();
         }
     }
 

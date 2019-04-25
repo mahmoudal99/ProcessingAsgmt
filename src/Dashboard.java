@@ -57,6 +57,11 @@ public class Dashboard extends PApplet {
         rightButton.setColor(81, 9, 1);
         rightButton.drawCircle();
 
+
+        Circle showPlanetScreenButton = new Circle(pApplet, 650, 390, 20);
+        showPlanetScreenButton.setColor(81, 9, 1);
+        showPlanetScreenButton.drawCircle();
+
         // Spaceship Image
 
         PImage spaceShipImage = pApplet.loadImage("images/spaceship.png");
