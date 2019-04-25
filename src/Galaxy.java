@@ -14,7 +14,6 @@ public class Galaxy extends PApplet {
 
     private boolean startShooting = false;
 
-
     public void settings() {
         size(800, 600);
     }
