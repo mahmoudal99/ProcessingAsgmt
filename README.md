@@ -11,3 +11,17 @@ The main class is called the Galaxy Class, this incorporates setup, settings and
 
 Following the Galaxy class i added the Spaceship class, i used this class to build the main parts of the Spaceship such as the windshield, turrets on either side and dashboard, each of these features were created in separate classes too and drawn by created a draw function in each class.
 
+I then created the Planet class which takes an custom dimentions and creates a planet in the background, the draw planet function creates an ellipse with the custom dimentions passed.
+
+I created separate classes for the radar, handscanner and lever and included a draw function in each.
+
+# How It Works - Animated Features
+
+To animate the Hand Scanner I created an array of y coordinates and the program drew a new line at the new y coordinate for 9 times and then it repeats.
+
+To animate the radar i created 2 arrays for y and x coordinates which had to be calculated precisely. At each iteration the right vertex of the line is updated.
+
+
+
+
+
