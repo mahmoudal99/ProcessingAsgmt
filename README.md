@@ -17,6 +17,9 @@ I created separate classes for the radar, handscanner and lever and included a d
 
 I added the Circle class which made drawing circles very easy, the class contains functions to set color, alpha and the constructor takes the custom size of the circle.
 
+Finally i created the PlanetScreen class which draws a rectangle showing the list of planets from a text file.
+The draw function takes in an array of planet names which were read from the text file and shown. I created a while loop, at each iteration a line is drawn at the given coordinates and a word is printed.
+
 # How It Works - Animated Features
 
 To animate the Hand Scanner I created an array of y coordinates and the program drew a new line at the new y coordinate for 9 times and then it repeats.
