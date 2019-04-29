@@ -15,11 +15,16 @@ I then created the Planet class which takes an custom dimentions and creates a p
 
 I created separate classes for the radar, handscanner and lever and included a draw function in each.
 
+I added the Circle class which made drawing circles very easy, the class contains functions to set color, alpha and the constructor takes the custom size of the circle.
+
 # How It Works - Animated Features
 
 To animate the Hand Scanner I created an array of y coordinates and the program drew a new line at the new y coordinate for 9 times and then it repeats.
 
 To animate the radar i created 2 arrays for y and x coordinates which had to be calculated precisely. At each iteration the right vertex of the line is updated.
+
+To shoot the lasers i first created a Weapons class which has the function animateLaser. The function takes in a boolean, if true the loop will iterate through the y and x coordinates for each laser and draw the laser image at each given coordinate. 
+
 
 
 
